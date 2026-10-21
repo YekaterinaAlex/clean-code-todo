@@ -3,39 +3,36 @@ const addTaskButton = document.getElementsByTagName('button')[0];
 const incompleteTasksList = document.getElementById('incompleteTasks');
 const completedTasksList = document.getElementById('completed-tasks');
 
+const createButton = function (text, className) {
+  const button = document.createElement('button');
+  button.className = className;
+  button.innerText = text;
+  return button;
+};
+
 const createTaskListItem = function (taskText) {
   const listItem = document.createElement('li');
 
   const checkBox = document.createElement('input');
+  checkBox.type = 'checkbox';
 
   const label = document.createElement('label');
-
-  const editInput = document.createElement('input');
-
-  const editButton = document.createElement('button');
-
-  const deleteButton = document.createElement('button');
-  const deleteButtonImg = document.createElement('img');
-
   label.innerText = taskText;
   label.className = 'task';
 
-  checkBox.type = 'checkbox';
+  const editInput = document.createElement('input');
   editInput.type = 'text';
   editInput.className = 'task';
 
-  editButton.innerText = 'Edit';
-  editButton.className = 'edit';
+  const editButton = createButton('Edit', 'edit');
 
-  deleteButton.className = 'delete';
+  const deleteButton = createButton('', 'delete');
+  const deleteButtonImg = document.createElement('img');
   deleteButtonImg.src = './remove.svg';
   deleteButton.appendChild(deleteButtonImg);
 
-  listItem.appendChild(checkBox);
-  listItem.appendChild(label);
-  listItem.appendChild(editInput);
-  listItem.appendChild(editButton);
-  listItem.appendChild(deleteButton);
+  listItem.append(checkBox, label, editInput, editButton, deleteButton);
+
   return listItem;
 };
 
