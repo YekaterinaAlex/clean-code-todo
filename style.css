@@ -52,7 +52,7 @@ button {
   color: #888;
   font-size: 15px;
   width: 60px;
-  font-family: Lato, sans-serif;
+  font-family: inherit;
   cursor: pointer;
 }
 button:hover {
@@ -78,7 +78,7 @@ input[type='text'] {
   border: 1px solid #ddd;
   background: #fff;
   border-radius: 6px;
-  font-family: Lato, sans-serif;
+  font-family: inherit;
   color: #888;
 }
 input[type='text']:focus {
