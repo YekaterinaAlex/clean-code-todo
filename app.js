@@ -1,8 +1,6 @@
 const newTaskInput = document.getElementById('new-task');
-const addTaskButton = document.querySelector(
-  '#topSectionForAddingElementToList button',
-);
-const incompleteTasksList = document.getElementById('incompleteTasks');
+const addTaskButton = document.querySelector('#add-task-section button');
+const incompleteTasksList = document.getElementById('incomplete-tasks');
 const completedTasksList = document.getElementById('completed-tasks');
 
 const createButton = function (text, className) {
@@ -54,7 +52,7 @@ const editTask = function () {
   const editInput = listItem.querySelector('input[type=text]');
   const label = listItem.querySelector('label');
   const editButton = listItem.querySelector('.edit');
-  const isEditing = listItem.classList.contains('editMode');
+  const isEditing = listItem.classList.contains('edit-mode');
 
   if (isEditing) {
     label.innerText = editInput.value;
@@ -64,7 +62,7 @@ const editTask = function () {
     editButton.innerText = 'Save';
   }
 
-  listItem.classList.toggle('editMode');
+  listItem.classList.toggle('edit-mode');
 };
 
 const deleteTask = function () {
